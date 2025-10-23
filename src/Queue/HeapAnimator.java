@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class HeapAnimator {
 
     // === Animasyon ayarları ===
-    private static final long SLEEP_MS = 400;      // kareler arası bekleme (ms)
+    private static final long SLEEP_MS = 1000;      // kareler arası bekleme (ms)
     private static final boolean CLEAR_BETWEEN_FRAMES = true; // her karede ekranı boşalt
 
     // === Demo ===
