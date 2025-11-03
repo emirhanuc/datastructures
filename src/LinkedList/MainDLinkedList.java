@@ -22,6 +22,8 @@ public class MainDLinkedList {
         dll.delete(30);
         dll.displayForward();   // 5 ⇀ 7 ⇀ 10 ⇀ 20 ⇀ 25 ⇀ null
         dll.displayBackward();  // 25 ⇁ 20 ⇁ 10 ⇁ 7 ⇁ 5 ⇁ null
+        dll.contains(7);
+        System.out.println(dll.contains(7));
 
         System.out.println("size = " + dll.size()); // 5
     }

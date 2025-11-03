@@ -93,6 +93,16 @@ public class DoublyLinkedList {
         cur.prev = node;
         size++;
     }
+    public boolean contains(int key){
+        DNode current = head;
+        while (current != null){
+            if (current.data==key){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 
     // Değere göre sil: O(n)
     public void delete(int key) {
