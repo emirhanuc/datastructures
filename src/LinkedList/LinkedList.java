@@ -23,6 +23,40 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
+    public void insertBefore(int key, int newData) {
+        // 1) Boş liste
+        if (head == null) {
+            System.out.println("Uyarı: Liste boş, ekleme yapılmadı.");
+            return;
+        }
+
+        // 2) head hedefse: başa ekleme
+        if (head.data == key) {
+            insertAtBeginning(newData);
+            return;
+        }
+
+        // 3) prev-curr ile ara tara
+        Node prev = head;
+        Node curr = head.next;
+
+        while (curr != null && curr.data != key) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        // 4) bulunamadı
+        if (curr == null) {
+            System.out.println("Uyarı: " + key + " değerine sahip düğüm bulunamadı.");
+            return;
+        }
+
+        // 5) bulundu: prev ile curr arasına newNode ekle
+        Node newNode = new Node(newData);
+        newNode.next = curr;   // yeni düğüm, hedefi işaret etsin
+        prev.next = newNode;   // prev artık yeni düğümü işaret etsin
+    }
+
     public void delete(int key){
         Node temp = head,prev = null;
 
